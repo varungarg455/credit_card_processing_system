@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
       cardData.card_no = card;
       cards.push(cardData);
     });
-    res.status(200).send({'status': 200, cards});
+    res.status(200).send({'status': 'success', cards});
   }
 });
 
@@ -212,6 +212,7 @@ app.put("/credit", function (req, res) {
   }
 });
 
-app.listen(port, () => {
+module.exports = app.listen(port, () => {
   console.log(`Node app listening at http://localhost:${port}`);
 });
+
